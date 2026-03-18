@@ -1,0 +1,50 @@
+CSS
+
+:root {
+  --matrix-green: #00ff41;
+  --matrix-dark: #0d0208;
+  --matrix-glow: 0 0 8px #00ff41;
+}
+
+body {
+  background-color: var(--matrix-dark);
+  color: var(--matrix-green);
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* The Outer Container */
+div {
+  border: 2px solid var(--matrix-green);
+  padding: 60px;
+  background-color: rgba(0, 20, 0, 0.8);
+  box-shadow: var(--matrix-glow);
+  text-align: center;
+  cursor: pointer;
+}
+
+/* The Inner Button */
+button {
+  background-color: transparent;
+  border: 1px solid var(--matrix-green);
+  color: var(--matrix-green);
+  padding: 15px 30px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: var(--matrix-green);
+  color: var(--matrix-dark);
+}
+
+h2 {
+  text-shadow: var(--matrix-glow);
+}
