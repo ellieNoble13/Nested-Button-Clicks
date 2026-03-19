@@ -1,9 +1,7 @@
-CSS
-
 :root {
   --matrix-green: #00ff41;
   --matrix-dark: #0d0208;
-  --matrix-glow: 0 0 8px #00ff41;
+  --matrix-glow: 0 0 8px #00ff41, 0 0 15px #00ff41;
 }
 
 body {
@@ -15,36 +13,52 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
-/* The Outer Container */
+
 div {
-  border: 2px solid var(--matrix-green);
-  padding: 60px;
-  background-color: rgba(0, 20, 0, 0.8);
+  border: 3px solid var(--matrix-green);
+  padding: 80px;
+  background-color: rgba(0, 15, 0, 0.9);
   box-shadow: var(--matrix-glow);
   text-align: center;
-  cursor: pointer;
+  position: relative;
+  cursor: crosshair;
 }
 
-/* The Inner Button */
+
 button {
-  background-color: transparent;
-  border: 1px solid var(--matrix-green);
+  background-color: var(--matrix-dark);
+
+  border: 2px solid var(--matrix-green);
   color: var(--matrix-green);
-  padding: 15px 30px;
+  padding: 20px 40px;
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
   cursor: pointer;
+
+  box-shadow: 0 0 10px var(--matrix-green), inset 0 0 5px var(--matrix-green);
+  transition: all 0.2s ease;
   margin-top: 20px;
-  transition: all 0.2s;
 }
 
 button:hover {
   background-color: var(--matrix-green);
   color: var(--matrix-dark);
+
+  box-shadow: 0 0 30px var(--matrix-green);
 }
 
-h2 {
-  text-shadow: var(--matrix-glow);
+
+@keyframes flicker {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  100% { opacity: 0.99; }
+}
+
+div, button, h2 {
+  animation: flicker 0.15s infinite;
 }

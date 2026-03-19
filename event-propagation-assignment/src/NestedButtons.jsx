@@ -8,7 +8,6 @@ function NestedButtons({ innerMsg, outerMsg }) {
 
     // Handler for the Inner element (the button)
     const handleInnerClick = (e) => {
-        // This is the core of the assignment
         e.stopPropagation();
         alert(innerMsg);
     };
